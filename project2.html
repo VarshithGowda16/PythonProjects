@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get in Touch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:aquamarine;
+      color:coral;
+      padding: 20px;
+    }
+
+    .dark-mode {
+      background-color:blanchedalmond;
+      color:chocolate;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      background:blueviolet;
+    }
+
+    .dark-mode .form-container {
+      background:cornsilk;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid white;
+    }
+
+    button {
+      background-color:fuchsia;
+      color: white;
+      border: none;
+    }
+
+    .toggle {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="toggle">
+      <label>
+        <input type="checkbox" id="themeSwitch" />
+        Toggle Dark Mode
+      </label>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      alert("Thank you for contacting us!");
+      form.reset();
+    });
+
+    // Toggle theme
+    document.getElementById('themeSwitch').addEventListener('change', function() {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
+</body>
+</html>
