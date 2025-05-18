@@ -6,12 +6,12 @@ int main()
     int a;
     int b;
     int result;
-    printf("enter a: ");
+    printf("\nenter a: ");
     scanf("%d",&a);
     printf("enter b: ");
     scanf("%d",&b);
 
     result = a + b;
-    printf("\nsum of a and b is: ",result);
+    printf("\nsum of a and b is: %d",result);
     return 0;
-} 
+}
