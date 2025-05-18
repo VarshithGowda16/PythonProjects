@@ -14,4 +14,4 @@ int main()
     result = a + b;
     printf("\nsum of a and b is: ",result);
     return 0;
-}
+} 
