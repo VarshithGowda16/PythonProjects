@@ -4,12 +4,13 @@ tim = T()
 scr = S()
 
 num_cir = 360 #it is the number of repetations required for 360 completion
-tim.speed(0)#0 is the fastest,0.5 is moderate speed,1 is minimum speed
 angle = 5
+draw = num_cir / angle
+tim.speed(0)#0 is the fastest,0.5 is moderate speed,1 is minimum speed
 
 tim.shape("circle")
 
-for _ in range(36):#because 360 divided by 5 is 72 this is the number os circles drawn
+for _ in range(int(draw)):
     tim.circle(100)
     tim.left(angle)
 
